@@ -1,13 +1,12 @@
 Name:           gimp-normalmap-plugin
 Version:        1.2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A plugin for GIMP for work with normal maps
 Summary(ru):    Плагин GIMP для работы с картами нормалей
 
 License:        GPLv2
 URL:            http://code.google.com/p/gimp-normalmap/
 Source0:        http://gimp-normalmap.googlecode.com/files/gimp-normalmap-%{version}.tar.bz2
-Source100:      README.RFRemix
 
 BuildRequires:  gimp-devel >= 2.4.0
 BuildRequires:  glew-devel >= 1.3.3
@@ -33,7 +32,6 @@ normal maps for use in per-pixel lighting applications.
 %build
 sed -i 's|-lGLEW|-lGLEW -lm|' Makefile.linux
 make %{?_smp_mflags}
-cp %{SOURCE100} .
 
 
 %install
@@ -46,9 +44,12 @@ install normalmap $RPM_BUILD_ROOT$GIMP_PLUGINS_DIR/plug-ins
 %files
 %defattr(-,root,root,-)
 %{_libdir}/gimp/2.0/plug-ins/normalmap
-%doc COPYING README README.RFRemix
+%doc COPYING README
 
 
 %changelog
+* Mon May 14 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.2-2.R
+- clean spec
+
 * Mon Jan 30 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.2-1.R
 - initial release
