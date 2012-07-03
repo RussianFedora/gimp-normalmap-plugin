@@ -1,6 +1,6 @@
 Name:           gimp-normalmap-plugin
-Version:        1.2.2
-Release:        2%{?dist}
+Version:        1.2.3
+Release:        1%{?dist}
 Summary:        A plugin for GIMP for work with normal maps
 Summary(ru):    Плагин GIMP для работы с картами нормалей
 
@@ -48,6 +48,9 @@ install normalmap $RPM_BUILD_ROOT$GIMP_PLUGINS_DIR/plug-ins
 
 
 %changelog
+* Tue Jul 03 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.3-1.R
+- update to 1.2.3
+
 * Mon May 14 2012 Vasiliy N. Glazov <vascom2@gmail.com> - 1.2.2-2.R
 - clean spec
 
